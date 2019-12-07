@@ -1,9 +1,9 @@
 {
-    "name": "gonzakpo/afip-bundle",
+    "name": "TiiToo/afip",
     "type": "symfony-bundle",
     "description": "Web Services de AFIP",
     "keywords": ["afip", "web", "services"],
-    "homepage": "https://github.com/gonzakpo/afip",
+    "homepage": "https://github.com/TiiToo/afip",
     "license": "MIT",
     "authors": [
         {
