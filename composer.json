@@ -1,5 +1,5 @@
 {
-    "name": "TiiToo/afip",
+    "name": "tito/afip",
     "type": "symfony-bundle",
     "description": "Web Services de AFIP",
     "keywords": ["afip", "web", "services"],
