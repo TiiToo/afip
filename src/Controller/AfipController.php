@@ -4,6 +4,7 @@ namespace Gonzakpo\AfipBundle\Controller;
 
 use Afip;
 
+
 /**
  * @author Gonzalo Alonso <gonkpo@gmail.com>
  */
@@ -12,6 +13,7 @@ class AfipController
     private $project_dir;
     private $afip_parameters;
     private $afip;
+    
 
     public function __construct($afip_parameters, $project_dir)
     {
@@ -22,6 +24,9 @@ class AfipController
             $this->afip = new Afip($this->afip_parameters);
         }
     }
+    
+    
+    
 
     private function parseParameters($afip_parameters)
     {
@@ -48,4 +53,31 @@ class AfipController
     {
         return $this->afip;
     }
+    
+    public function getWSFE()
+    {
+        $facturaE = $this->afip->__get('ElectronicBilling');
+        
+        return $facturaE;
+        //$facturaE = json_decode(json_encode($facturaE->GetVoucherTypes()), true);
+        
+    }
+    
+    public function setWSFE($data)
+    {
+        $facturaE = $this->afip->__get('ElectronicBilling');
+        $res = $facturaE->CreateVoucher($data);
+        
+        
+        return $res;
+        //$facturaE = json_decode(json_encode($facturaE->GetVoucherTypes()), true);
+        
+    }
+    
+     public function getDatos($data)
+    {
+        $datos = $this->afip->__get($data);
+        return $datos;        
+    }
+    
 }
